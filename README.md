@@ -1,28 +1,27 @@
-# 🎮 Project Library — Manga Japanese Style (Ruby Palette)
+# Project Library
 
 [![Platform: Windows](https://img.shields.io/badge/platform-Windows_10%20%2F%2011-blue.svg)](#)
 [![Tech Stack: WPF + C#](https://img.shields.io/badge/tech_stack-WPF_%2B_C%23-purple.svg)](#)
 [![Database: SQLite](https://img.shields.io/badge/database-SQLite-green.svg)](#)
-[![Style: Manga / Ruby](https://img.shields.io/badge/style-Manga%20%2F%20Ruby-E0115F.svg)](#)
 
-A native Windows desktop application that acts as a "Steam Library" for your development projects. Add your project folders, browse them in a beautiful manga-styled UI, auto-detect their tech stacks, and launch them in your favorite editor with a single click.
-
----
-
-## ✨ Features
-
-- **📖 Manga Japanese Aesthetic**: Ink-stroke borders (3px solid ink), halftone screentone patterns, warm paper backgrounds, and diagonal speed-line effects.
-- **⚡ Smart Tech Auto-Detection**: Scans project directories to auto-identify project types (React, Node, Python, Rust, Go, Java, C#, Markdown, HTML/CSS).
-- **🚀 One-Click Launch**: Open your projects directly in VS Code, Terminal, Visual Studio, or File Explorer.
-- **📂 Library Grid & List Views**: Real-time searching, sorting (Name, Date Added, Last Active), and filtering by custom tags or tech stacks.
-- **⭐ Favorites/Pinning**: Pin your most important projects to show them on the Home Hero carousel.
-- **🏷️ Tag Management**: Define custom tags and see them styled as manga speech bubbles.
+A native Windows desktop application that acts as a "Steam Library" for your development projects. Add your project folders, browse them in a beautiful, highly stylized UI, auto-detect their tech stacks, and launch them in your favorite editor with a single click.
 
 ---
 
-## 🎨 Design Vision & Theme (Ruby Palette)
+## Features
 
-The application employs a curated light theme inspired by classical Japanese manga shading techniques with a modern ruby accent:
+- **Visual Aesthetic**: Ink-stroke borders (3px solid ink), halftone screentone patterns, warm paper backgrounds, and diagonal speed-line effects.
+- **Smart Tech Auto-Detection**: Scans project directories to auto-identify project types (React, Node, Python, Rust, Go, Java, C#, Markdown, HTML/CSS).
+- **One-Click Launch**: Open your projects directly in VS Code, Terminal, Visual Studio, or File Explorer.
+- **Library Grid & List Views**: Real-time searching, sorting (Name, Date Added, Last Active), and filtering by custom tags or tech stacks.
+- **Favorites/Pinning**: Pin your most important projects to show them on the Home Hero carousel.
+- **Tag Management**: Define custom tags and see them styled as unique speech bubbles.
+
+---
+
+## Design Vision & Theme
+
+The application employs a curated light theme with a custom ink-and-paper aesthetic and a modern ruby accent:
 
 | Token | Hex | Usage |
 |-------|-----|-------|
@@ -36,7 +35,7 @@ The application employs a curated light theme inspired by classical Japanese man
 
 ---
 
-## 🏗️ Application Architecture
+## Application Architecture
 
 The project is designed using the **MVVM (Model-View-ViewModel)** architectural pattern:
 
@@ -55,7 +54,7 @@ ProjectLibrary/
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Operating System**: Windows 10 or 11
@@ -78,7 +77,7 @@ ProjectLibrary/
 
 ---
 
-## 📂 Auto-Detection Signature Matrix
+## Auto-Detection Signature Matrix
 
 The `TechDetector` service automatically detects project types based on local folder files:
 
@@ -95,5 +94,5 @@ The `TechDetector` service automatically detects project types based on local fo
 
 ---
 
-## 📄 License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
