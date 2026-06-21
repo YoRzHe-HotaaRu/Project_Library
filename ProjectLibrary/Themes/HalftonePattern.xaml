@@ -1,0 +1,71 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+        Halftone / screentone dot pattern — manga paper texture.
+        Tile a small viewport containing one dot; repeat across the surface.
+        Adjust Viewport size to scale the dots (smaller = denser pattern).
+    -->
+    <DrawingBrush x:Key="HalftonePattern"
+                  TileMode="Tile"
+                  Viewport="0,0,8,8"
+                  ViewportUnits="Absolute"
+                  Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="{StaticResource Halftone}">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="4,4" RadiusX="1" RadiusY="1" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <!-- A denser / finer halftone for hover backgrounds -->
+    <DrawingBrush x:Key="HalftonePatternFine"
+                  TileMode="Tile"
+                  Viewport="0,0,5,5"
+                  ViewportUnits="Absolute"
+                  Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="{StaticResource Halftone}">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="2.5,2.5" RadiusX="0.6" RadiusY="0.6" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <!--
+        Speed lines — thin diagonal decorative stripes for headers / backgrounds.
+        Implemented as a tiled set of near-transparent diagonal stripes via LinearGradientBrush.
+    -->
+    <DrawingBrush x:Key="SpeedLines"
+                  TileMode="Tile"
+                  Viewport="0,0,24,24"
+                  ViewportUnits="Absolute"
+                  Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#081A1A1A">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigure IsClosed="False" StartPoint="0,24">
+                                    <LineSegment Point="24,0" />
+                                </PathFigure>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                    <GeometryDrawing.Pen>
+                                        <Pen Brush="#101A1A1A" Thickness="1" />
+                                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>

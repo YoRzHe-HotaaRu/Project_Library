@@ -1,0 +1,55 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+        Storyboards for manga motion effects. Triggered from styles in MangaControls.xaml
+        (EventTrigger on MouseEnter / MouseLeave) or invoked from code-behind on page transitions.
+    -->
+
+    <!-- Card hover: ink border thickens 3 -> 5 and flips to ruby -->
+    <Storyboard x:Key="CardHoverEnter">
+        <ThicknessAnimation Storyboard.TargetProperty="BorderThickness"
+                            Duration="0:0:0.18" To="5" />
+        <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                        Duration="0:0:0.18" To="{StaticResource RubyColor}" />
+    </Storyboard>
+
+    <!-- Card leave: border returns to ink 3 -->
+    <Storyboard x:Key="CardHoverLeave">
+        <ThicknessAnimation Storyboard.TargetProperty="BorderThickness"
+                            Duration="0:0:0.18" To="3" />
+        <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                        Duration="0:0:0.18" To="{StaticResource InkColor}" />
+    </Storyboard>
+
+    <!-- Page entry: slide in from the right + fade -->
+    <Storyboard x:Key="PageEnter">
+        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                         Duration="0:0:0.35" From="40" To="0">
+            <DoubleAnimation.EasingFunction>
+                <CubicEase EasingMode="EaseOut" />
+            </DoubleAnimation.EasingFunction>
+        </DoubleAnimation>
+        <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)"
+                         Duration="0:0:0.35" From="0" To="1" />
+    </Storyboard>
+
+    <!-- Card entry: scale 0.95 -> 1.0 + fade -->
+    <Storyboard x:Key="CardEnter">
+        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                         Duration="0:0:0.25" From="0.95" To="1.0">
+            <DoubleAnimation.EasingFunction>
+                <CubicEase EasingMode="EaseOut" />
+            </DoubleAnimation.EasingFunction>
+        </DoubleAnimation>
+        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                         Duration="0:0:0.25" From="0.95" To="1.0">
+            <DoubleAnimation.EasingFunction>
+                <CubicEase EasingMode="EaseOut" />
+            </DoubleAnimation.EasingFunction>
+        </DoubleAnimation>
+        <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)"
+                         Duration="0:0:0.25" From="0" To="1" />
+    </Storyboard>
+
+</ResourceDictionary>

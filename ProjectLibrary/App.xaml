@@ -1,0 +1,58 @@
+<Application x:Class="ProjectLibrary.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ProjectLibrary"
+             xmlns:vm="clr-namespace:ProjectLibrary.ViewModels"
+             xmlns:views="clr-namespace:ProjectLibrary.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- MaterialDesign base (light theme, red primary as starting point; overridden below) -->
+                <materialDesign:BundledTheme BaseTheme="Light"
+                                             PrimaryColor="Red"
+                                             SecondaryColor="Pink" />
+
+                <!-- Control-level styles for MaterialDesign components (PackIcon, Button, TextBox, etc.) -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+
+                <!-- Manga theme overlay -->
+                <ResourceDictionary Source="Themes/MangaColors.xaml" />
+                <ResourceDictionary Source="Themes/MangaTypography.xaml" />
+                <ResourceDictionary Source="Themes/HalftonePattern.xaml" />
+                <ResourceDictionary Source="Themes/MangaAnimations.xaml" />
+                <ResourceDictionary Source="Themes/MangaControls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- ===== VM -> View routing for the main content area ===== -->
+            <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                <views:HomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:LibraryViewModel}">
+                <views:LibraryView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:FavoritesViewModel}">
+                <views:FavoritesView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:TagsViewModel}">
+                <views:TagsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+                <views:SettingsView />
+            </DataTemplate>
+
+            <!-- Default window font -->
+            <Style TargetType="Window">
+                <Setter Property="FontFamily" Value="{StaticResource DefaultFont}" />
+                <Setter Property="Foreground" Value="{StaticResource Ink}" />
+                <Setter Property="Background" Value="{StaticResource Paper}" />
+            </Style>
+
+            <!-- Default TextBlock font -->
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource MangaBodyFont}" />
+                <Setter Property="Foreground" Value="{StaticResource Ink}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
